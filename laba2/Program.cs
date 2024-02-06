@@ -1,4 +1,5 @@
 ﻿using company;
+using bank;
 
 namespace laba2
 {
@@ -7,7 +8,9 @@ namespace laba2
         static void Main(string[] args)
         {
             // CompanyTest1();
-            CompanyTest2();
+            //CompanyTest2();
+            //BankTest1();
+            //BankTest2();
         }
 
         static void CompanyTest1()
@@ -43,5 +46,38 @@ namespace laba2
                 Console.WriteLine(ex.Message);
             }
         }
+
+        static void BankTest1()
+        {
+            try
+            {
+                Bank bank = new Bank("Сбер");
+                BankBranch branch = new BankBranch(bank, 5670, "Филиал-1");
+
+                LongInvestment investment = new LongInvestment("Петя", 567, branch);
+                Console.WriteLine(investment.getTotalSum(-10));
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        static void BankTest2()
+        {
+            try
+            {
+                Bank bank = new Bank("Банк");
+                BankBranch branch = new BankBranch(bank, 45445, "Филиал-2");
+
+                InitialInvestment investment = new InitialInvestment("Кирилл", -234, branch);
+
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
     }
 }

@@ -190,6 +190,7 @@
                 if (Bonus < 0)
                 {
                     throw new BonusException("Премия не может быть отрицательной!", Bonus);
+
                 }
             }
             catch(SalaryException ex)
