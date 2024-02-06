@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "company", "company\company.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bank", "Bank\Bank.csproj", "{AFFE74AF-1816-4408-935B-E018E7DCEDBC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "atm", "atm\atm.csproj", "{A2006923-F110-4793-B1BB-92BECD6DC789}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{AFFE74AF-1816-4408-935B-E018E7DCEDBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFFE74AF-1816-4408-935B-E018E7DCEDBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFFE74AF-1816-4408-935B-E018E7DCEDBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2006923-F110-4793-B1BB-92BECD6DC789}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2006923-F110-4793-B1BB-92BECD6DC789}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2006923-F110-4793-B1BB-92BECD6DC789}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2006923-F110-4793-B1BB-92BECD6DC789}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

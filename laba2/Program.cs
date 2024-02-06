@@ -1,5 +1,6 @@
 ﻿using company;
 using bank;
+using atm;
 
 namespace laba2
 {
@@ -11,6 +12,8 @@ namespace laba2
             //CompanyTest2();
             //BankTest1();
             //BankTest2();
+            //AtmTest1();
+            //AtmTest2();
         }
 
         static void CompanyTest1()
@@ -76,6 +79,30 @@ namespace laba2
             catch(Exception ex)
             {
                 Console.WriteLine(ex.Message);
+            }
+        }
+        static void AtmTest1()
+        {
+            try
+            {
+                BasicCheck check = new BasicCheck("43434", "2345", 100);
+                check.withdraw(200);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        static  void AtmTest2()
+        {
+            try
+            {
+                PreferedCheck check = new PreferedCheck("344", "2345", -900);
+                check.withdraw(200);
+            }
+            catch(Exception ext)
+            {
+                Console.WriteLine(ext.Message);
             }
         }
 
