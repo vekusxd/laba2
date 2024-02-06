@@ -17,7 +17,7 @@
             Title = "unknown";
         }
         /// <summary>
-        /// Конструктор с парамметрами
+        /// Конструктор с параметрами
         /// </summary>
         /// <param name="title">Название компании</param>
         public Company(string title)
@@ -53,7 +53,7 @@
             Title = "unknown";
         }
         /// <summary>
-        /// Конструктор с парамметрами
+        /// Конструктор с параметрами
         /// </summary>
         /// <param name="company">Компания</param>
         /// <param name="numberOfEmployess">Количество сотрудников в отделе</param>
