@@ -1,0 +1,74 @@
+@startuml Bank
+
+class Bank{
+    --Properties--
+    + Title: string
+    --Public--
+    + Bank()
+    + Bank(title: string)
+}
+
+class BankBranch{
+    --Properties--
+    + Title: string
+    + TotalInvestmentSum: int
+    + Bank: Bank
+    --Public--
+    + BankBranch()
+    + BankBranch(title: string, totalInvestmentSum: int, bank: Bank)
+}
+
+Bank ..> BankBranch
+
+
+abstract class Investment{
+    --Properties--
+    + InvesterName: string
+    + InvestmentSum: int
+    + BankBranch: BankBranch
+    --Public--
+    + Investment()
+    + Investment(name: string, sum: int, branch: BankBranch)
+    + {abstract} getTotalSum(months: int) : double
+}
+
+BankBranch ..> Investment
+
+class LongInvestment{
+    --Public--
+    + LongInvestment()
+    + LongInvestment(name: string, sum: int, branch: BankBranch)
+    + getTotalSum(months: int) : double
+}
+
+Investment --|> LongInvestment
+
+class InitialInvestment{
+    --Public--
+    + InitialInvestment()
+    +InitialInvestment(name: string, sum: int, branch: BankBranch)
+    + getTotalSum(months: int) : double
+}
+
+Investment --|> InitialInvestment
+
+
+exception MonthException{
+    --Properties--
+    + Counter: int
+    --Public--
+    + MonthException(message: string, counter: int)
+}
+
+exception InvestmentException{
+    --Properties--
+    + Investment: int
+    --Public--
+    + InvestmentException(message: string, investment: int)
+}
+
+ArgumentException --|> MonthException
+ArgumentException --|> InvestmentException
+
+
+@enduml

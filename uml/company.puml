@@ -1,0 +1,75 @@
+@startuml Company
+
+class Company{
+    --Properties--
+    + Title: string
+    --Public--
+    + Company()
+    + Company(title: string)
+}
+
+class Department{
+    --Properties--
+    + Title: string
+    + EmployeesCounter: uint
+    + Company: Company
+    --Public--
+    + Department()
+    + Department(title: string, employeesCounter: uint, company: Company)
+}
+
+Company ..> Department
+
+Department ..> Employee
+
+abstract class Employee{
+    --Properties--
+    + Name: string
+    + Position: string
+    + BaseSalary: double
+    + Department: Department
+    --Public--
+    + Employee()
+    + Employee(name: string, position: string, baseSalary: double, department: Department)
+    + {abstract} getSalary() : double
+}
+
+class RegularEmployee{
+    --Properties--
+    + Bonus: double
+    --Public--
+    + RegularEmployee()
+    + RegularEmployee(name:string, positions:string, baseSalary:double, bonus: double, department: Department)
+    + getSalary() : double
+}
+
+Employee --|> RegularEmployee
+
+class ContractEmployee{
+    --Public--
+    + ContractEmployee()
+    + ContractEmployee(name: string, position:string, baseSalary:string, department: Department)
+    + getSalary() : double
+}
+
+Employee --|> ContractEmployee
+
+exception SalaryException{
+    --Properties--
+    + Salary: double
+    --Public--
+    + SalaryException(message: string, salary: double)
+}
+
+ArgumentException --|> SalaryException
+
+exception BonusException{
+    --Properties--
+    + Bonus: double
+    --Public--
+    BonusException(message: string, bonus: double)
+}
+
+ArgumentException --|> BonusException
+
+@enduml

@@ -1,0 +1,71 @@
+@startuml ATM
+
+exception AccountBalanceException{
+    --Properties--
+    + Value: int
+    --Public--
+    + AccountBalanceException(message: string, value: int)
+}
+
+exception WithdrawException{
+    --Properties--
+    + Value: int
+    --Public--
+    + WithdrawException(message: string, value: int)
+}
+
+
+ArgumentException --|> AccountBalanceException
+ArgumentException --|> WithdrawException
+
+class Bank{
+    --Properties--
+    + Title: string
+    --Public--
+    + Bank()
+    + Bank(title: string)
+}
+
+class ATM{
+    --Properties--
+    + Id: string
+    + Address: string
+    + Bank: Bank
+    --Public--
+    + ATM()
+    + ATM(id: string, address: string, bank: Bank)
+}
+
+Bank ..> ATM
+
+abstract class Check{
+    --Properties--
+    + Number: string
+    + Pin-code: string
+    + RestBalance: int
+    --Public--
+    + Check()
+    + Check(number: string, pin-code: string, restBalance: int)
+    + {abstract} withdraw(sum: int) : void
+}
+
+class BasicCheck{
+    --Public--
+    + BasicCheck()
+    + BasicCheck(number: string, pin-code: string, restBalance: int)
+    + withdraw(sum: int) : void
+}
+
+Check --|> BasicCheck
+
+class PreferedCheck{
+    --Public--
+    + BasicCheck()
+    + BasicCheck(number: string, pin-code: string, rest_balance: int)
+    + withdraw(sum: int) : void
+}
+
+Check --|> PreferedCheck
+
+
+@enduml
